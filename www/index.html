@@ -9,7 +9,12 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet"></head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
 <style>
@@ -72,79 +77,26 @@
         border-radius: 50%;
     }
 </style>
-<div class="container">
-    <div class="page-header">
-        <h1>Hashing big file with FileReader JS</h1>
-        <p>Medium post: <a href="https://medium.com/@0xVaccaro/hashing-big-file-with-filereader-js-e0a5c898fc98">https://medium.com/@0xVaccaro/hashing-big-file-with-filereader-js-e0a5c898fc98</a></p>
-        <p>Github project: <a href="https://github.com/lvaccaro/hashfilereader">https://github.com/lvaccaro/hashfilereader</a></p>
-    </div>
 
-    <div class="deck">
-        <img id="layer1" src="img1.png"/>
-        <img id="layer2" src="img2.png"/>
-        <img id="layer3" src="img3.png"/>
-    </div>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="document">File upload</label>
-                        <input type="file" id="document" class="form-control" accept='*' placeholder="Select file"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="chunkSize">Chunk size in bytes</label>
-                        <input type="text" id="chunkSize" class="form-control" value="1048576"/>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-4">
-                            Time shifting ordering
-                        </div>
-                        <div class="col-2">
-                            <label class="switch">
-                                <input type="checkbox" id="switchMode" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <div class="col-4">
-                            Memory buffered ordering
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="hash">Hash</label>
-                        <input type="text" id="hash" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="fileSize">File size</label>
-                        <input type="text" id="fileSize" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="timeStart">Time start</label>
-                        <input type="text" id="timeStart" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="timeEnd">Time end</label>
-                        <input type="text" id="timeEnd" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="timeDelta">Time elapsed</label>
-                        <input type="text" id="timeDelta" class="form-control"/>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="chunkTotal">Total chunks</label>
-                        <input type="text" id="chunkTotal" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="chunkReorder">Chunks reordered</label>
-                        <input type="text" id="chunkReorder" class="form-control"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="deck">
+    <img id="border" src="img/border.png"/>
+    <img id="layer_a" src="img/img1.png"/>
+    <img id="layer_b" src="img/img2.png"/>
+    <img id="layer_c" src="img/img3.png"/>
+    <img id="layer_d" src="img/img4.png"/>
 </div>
+</br>
+<div class="fields">
+    <label for="document">File upload</label>
+    <input type="file" id="document"  accept='*' placeholder="Select file"/>
+
+    <label for="hash">Hash</label>
+    <input type="text" id="hash" />
+</div>
+                    
+
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->

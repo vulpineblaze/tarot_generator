@@ -1,0 +1,45 @@
+img
+{
+	position:absolute;
+	/*top: 0px;
+	left: 0px;
+	bottom:0px;*/
+}
+
+#border
+{
+    z-index: 10;
+}
+
+#layer_a
+{
+    z-index: 20;
+}
+
+#layer_b
+{
+	z-index: 30;
+}
+
+#layer_c
+{
+	z-index: 40;
+}
+
+#layer_d
+{
+	z-index: 50;
+}
+
+.deck {
+    margin: 10%;
+    width: 265px;
+    height: 457px;
+}
+
+
+.fields {
+	clear: left;
+    margin-left:10%;
+
+}

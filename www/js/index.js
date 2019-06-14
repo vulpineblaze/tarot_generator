@@ -19,9 +19,7 @@ function handleFiles() {
 
     var timeStart = new Date().getTime();
     var timeEnd = 0;
-    $("#timeStart").val(new Date(timeStart));
-    $("#fileSize").val(humanFileSize(file.size,true));
-    chunkSize = parseInt($("#chunkSize").val());
+
 
     loading(file,
         function (data) {
@@ -35,23 +33,31 @@ function handleFiles() {
             $("#hash").val(encrypted);
             timeEnd = new Date().getTime();
 
-            $("#timeStart").val(new Date(timeStart));
-            $("#timeEnd").val(new Date(timeEnd));
-            $("#timeDelta").val((timeEnd-timeStart)/1000+' sec');
-            $("#chunkTotal").val(chunkTotal);
-            $("#chunkReorder").val(chunkReorder);
+            console.log(encrypted);
+            buildDeck();
         });
 
 };
 
+function buildDeck(){
+    var layers = ["a","b","c","d"]; 
+    var x,i;
+    for (x=0;x<layers.length;x++) {
+        i = getRandomInt(1,2);
+        var src_path = "img/"+layers[x]+""+i+".png";
+        console.log(x,i,src_path);
+        document.getElementById("layer_"+layers[x]).src=src_path;
+    }
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function clear(){
-    $("#timeStart").val('');
-    $("#timeEnd").val('');
-    $("#timeDelta").val('');
     $("#hash").val('');
-    $("#fileSize").val('');
-    $("#chunkTotal").val('');
-    $("#chunkReorder").val('');
 
     lastOffset = 0;
     chunkReorder = 0;
@@ -85,11 +91,7 @@ function loading(file, callbackProgress, callbackFinal) {
 }
 
 function callbackRead(obj, file, evt, callbackProgress, callbackFinal){
-    if( $("#switchMode").is(':checked') ){
-        callbackRead_buffered(obj, file, evt, callbackProgress, callbackFinal);
-    } else {
-        callbackRead_waiting(obj, file, evt, callbackProgress, callbackFinal);
-    }
+    callbackRead_waiting(obj, file, evt, callbackProgress, callbackFinal);
 }
 
 var lastOffset = 0;
